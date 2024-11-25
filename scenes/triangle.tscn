@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://2xf2wjwjemqj"]
+
+[ext_resource type="PackedScene" uid="uid://b5rapxu4ctw5r" path="res://scenes/parent_brick.tscn" id="1_8gpy2"]
+[ext_resource type="Texture2D" uid="uid://ds8iv8g628t2j" path="res://assets/triangle.png" id="2_mvyf8"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_6frbe"]
+points = PackedVector2Array(-27, -27, 27, -27, -27, 27)
+
+[node name="triangle" instance=ExtResource("1_8gpy2")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_mvyf8")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("ConvexPolygonShape2D_6frbe")
+
+[node name="brick_life_label" parent="." index="2"]
+offset_top = -25.0
+offset_right = 8.0
+offset_bottom = -2.0

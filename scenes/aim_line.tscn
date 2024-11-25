@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://4rcu6c7v8vub"]
+
+[ext_resource type="Texture2D" uid="uid://ctu5tcek0pyp7" path="res://assets/aim.png" id="1_oe57q"]
+
+[node name="aim_line" type="Node2D"]
+scale = Vector2(1, 4)
+
+[node name="TextureRect" type="Sprite2D" parent="."]
+texture = ExtResource("1_oe57q")
+centered = false

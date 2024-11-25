@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://csq7ht8pgmnhy"]
+
+[ext_resource type="PackedScene" uid="uid://b5rapxu4ctw5r" path="res://scenes/parent_brick.tscn" id="1_oqbm1"]
+[ext_resource type="Texture2D" uid="uid://p8qqc8ofbcui" path="res://assets/square.png" id="2_70yrt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aaqd6"]
+size = Vector2(54, 54)
+
+[node name="square" instance=ExtResource("1_oqbm1")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_70yrt")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("RectangleShape2D_aaqd6")

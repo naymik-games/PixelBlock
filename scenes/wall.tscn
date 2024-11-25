@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://cf0jyoi3t4sxi"]
+
+[ext_resource type="Script" path="res://scripts/wall.gd" id="1_refbf"]
+
+[node name="wall" type="StaticBody2D" groups=["wall"]]
+script = ExtResource("1_refbf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 108.0
+offset_right = 540.0
+offset_bottom = 810.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0768358, 0.0768358, 0.0768358, 1)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 918, 0, 108, 540, 108, 540, 918, 783, 1149, 774, -114, -120, -114, -114, 1149)

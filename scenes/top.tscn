@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://4tuo7cxk8m0d"]
+
+[ext_resource type="Texture2D" uid="uid://unuvq74bvsu4" path="res://assets/NewSprite3.png" id="1_5djyi"]
+[ext_resource type="Script" path="res://scripts/top.gd" id="1_u72rl"]
+[ext_resource type="FontFile" uid="uid://cwei7xoykql2a" path="res://assets/japan.ttf" id="2_gpoa3"]
+[ext_resource type="Texture2D" uid="uid://cka4tct85gc02" path="res://assets/fastforward.png" id="4_yyer4"]
+
+[node name="top" type="Node"]
+script = ExtResource("1_u72rl")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(540, 108)
+offset_bottom = 3.0
+texture = ExtResource("1_5djyi")
+patch_margin_bottom = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 75.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_top = 10
+
+[node name="level_label" type="Label" parent="NinePatchRect/MarginContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_gpoa3")
+theme_override_font_sizes/font_size = 64
+text = "1"
+
+[node name="MarginContainer2" type="MarginContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -30.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ball_label" type="Label" parent="NinePatchRect/MarginContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_gpoa3")
+theme_override_font_sizes/font_size = 32
+text = "x1"
+horizontal_alignment = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="TextureButton" type="TextureButton" parent="NinePatchRect/MarginContainer3"]
+layout_mode = 2
+texture_normal = ExtResource("4_yyer4")
+stretch_mode = 0
+
+[connection signal="pressed" from="NinePatchRect/MarginContainer3/TextureButton" to="." method="_on_texture_button_pressed"]

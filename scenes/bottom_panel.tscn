@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl54rhb1l6gc1"]
+
+[ext_resource type="Texture2D" uid="uid://cr4pn71o68lfc" path="res://assets/bottom_panel.png" id="1_gs1ie"]
+
+[node name="bottom_panel" type="Control"]
+custom_minimum_size = Vector2(540, 108)
+layout_mode = 3
+anchors_preset = 0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(540, 108)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_gs1ie")
+patch_margin_left = 8

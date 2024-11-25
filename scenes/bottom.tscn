@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://durg7i6pqtje6"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_scjtc"]
+size = Vector3(648, 50, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6voy2"]
+size = Vector2(648, 51)
+
+[node name="bottom" type="StaticBody2D" groups=["bottom"]]
+position = Vector2(324, 1176)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+visible = false
+position = Vector2(-64, -232)
+mesh = SubResource("BoxMesh_scjtc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-64, -231)
+shape = SubResource("RectangleShape2D_6voy2")

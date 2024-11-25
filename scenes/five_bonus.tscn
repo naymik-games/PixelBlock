@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://nk8ker2lrp78"]
+
+[ext_resource type="Script" path="res://scripts/five_bonus.gd" id="1_3paf3"]
+[ext_resource type="Texture2D" uid="uid://bbsdb51f6qwj5" path="res://assets/five_bonus.png" id="2_bja6n"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g5igh"]
+radius = 23.0
+
+[node name="five_bonus" type="Area2D" groups=["bonus"]]
+collision_mask = 2
+script = ExtResource("1_3paf3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_bja6n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_g5igh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

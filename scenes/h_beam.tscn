@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://kj1ifwyrll4x"]
+
+[ext_resource type="Script" path="res://scripts/h_beam.gd" id="1_6087p"]
+[ext_resource type="Texture2D" uid="uid://cimd06ievic2u" path="res://assets/h_beam.png" id="2_up0pu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tlqq7"]
+radius = 19.0
+
+[node name="h_beam" type="Area2D" groups=["bonus"]]
+collision_mask = 2
+script = ExtResource("1_6087p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_up0pu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_tlqq7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
