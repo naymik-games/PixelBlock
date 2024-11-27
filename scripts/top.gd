@@ -1,6 +1,7 @@
 extends Node
 
 signal set_game_speed
+signal set_pause_game
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -13,3 +14,7 @@ func _process(delta):
 
 func _on_texture_button_pressed():
 	emit_signal("set_game_speed")
+
+
+func _on_menu_button_pressed() -> void:
+	emit_signal("set_pause_game")

@@ -1,18 +1,18 @@
 [gd_scene load_steps=5 format=3 uid="uid://4tuo7cxk8m0d"]
 
-[ext_resource type="Texture2D" uid="uid://unuvq74bvsu4" path="res://assets/NewSprite3.png" id="1_5djyi"]
 [ext_resource type="Script" path="res://scripts/top.gd" id="1_u72rl"]
-[ext_resource type="FontFile" uid="uid://cwei7xoykql2a" path="res://assets/japan.ttf" id="2_gpoa3"]
-[ext_resource type="Texture2D" uid="uid://cka4tct85gc02" path="res://assets/fastforward.png" id="4_yyer4"]
+[ext_resource type="Theme" uid="uid://b215yvwwrudym" path="res://themes/ui_theme.tres" id="2_kwyaw"]
+[ext_resource type="Texture2D" uid="uid://dvkrlqsrla45s" path="res://assets/speed_button.png" id="3_14b7b"]
+[ext_resource type="Texture2D" uid="uid://dlckr8ii7m275" path="res://assets/menu_button.png" id="4_1e8yp"]
 
 [node name="top" type="Node"]
 script = ExtResource("1_u72rl")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
+[node name="NinePatchRect" type="Panel" parent="."]
 custom_minimum_size = Vector2(540, 108)
-offset_bottom = 3.0
-texture = ExtResource("1_5djyi")
-patch_margin_bottom = 8
+offset_right = 540.0
+offset_bottom = 108.0
+theme = ExtResource("2_kwyaw")
 
 [node name="MarginContainer" type="MarginContainer" parent="NinePatchRect"]
 layout_mode = 1
@@ -29,7 +29,6 @@ theme_override_constants/margin_top = 10
 
 [node name="level_label" type="Label" parent="NinePatchRect/MarginContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_gpoa3")
 theme_override_font_sizes/font_size = 64
 text = "1"
 
@@ -49,7 +48,6 @@ theme_override_constants/margin_bottom = 10
 
 [node name="ball_label" type="Label" parent="NinePatchRect/MarginContainer2"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_gpoa3")
 theme_override_font_sizes/font_size = 32
 text = "x1"
 horizontal_alignment = 2
@@ -59,13 +57,30 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 40.0
+offset_left = -53.0
+offset_right = -13.0
+offset_bottom = 48.0
 grow_horizontal = 0
+theme_override_constants/margin_top = 8
 
 [node name="TextureButton" type="TextureButton" parent="NinePatchRect/MarginContainer3"]
 layout_mode = 2
-texture_normal = ExtResource("4_yyer4")
+texture_normal = ExtResource("3_14b7b")
+stretch_mode = 0
+
+[node name="MarginContainer4" type="MarginContainer" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 21.0
+offset_right = 81.0
+offset_bottom = 85.0
+metadata/_edit_use_anchors_ = true
+
+[node name="MenuButton" type="TextureButton" parent="NinePatchRect/MarginContainer4"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = ExtResource("4_1e8yp")
 stretch_mode = 0
 
 [connection signal="pressed" from="NinePatchRect/MarginContainer3/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="NinePatchRect/MarginContainer4/MenuButton" to="." method="_on_menu_button_pressed"]

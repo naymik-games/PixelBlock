@@ -1,0 +1,16 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://b215yvwwrudym"]
+
+[ext_resource type="FontFile" uid="uid://cocoxfhh6yxqh" path="res://themes/PixeloidMono.ttf" id="1_vk631"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hd4ax"]
+bg_color = Color(0.188235, 0.407843, 0.313726, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.52549, 0.752941, 0.423529, 1)
+
+[resource]
+default_font = ExtResource("1_vk631")
+Label/colors/font_color = Color(0.878431, 0.972549, 0.811765, 1)
+Panel/styles/panel = SubResource("StyleBoxFlat_hd4ax")

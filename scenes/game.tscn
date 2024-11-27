@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://cje4kq36v1iv5" path="res://assets/aim_texture.png" id="4_u1gb6"]
 [ext_resource type="PackedScene" uid="uid://4tuo7cxk8m0d" path="res://scenes/top.tscn" id="6_wdaoj"]
 [ext_resource type="Script" path="res://scenes/top.gd" id="7_t2tqj"]
-[ext_resource type="Texture2D" uid="uid://dddlmwew0bnvl" path="res://assets/top_panel.png" id="8_1eiqg"]
 [ext_resource type="PackedScene" uid="uid://cl54rhb1l6gc1" path="res://scenes/bottom_panel.tscn" id="8_m3sfp"]
+[ext_resource type="Theme" uid="uid://b215yvwwrudym" path="res://themes/ui_theme.tres" id="9_7igmk"]
 [ext_resource type="Texture2D" uid="uid://dk4llor18egh4" path="res://assets/bounce_icon.png" id="9_wwl80"]
 [ext_resource type="Texture2D" uid="uid://c8ixe1rfx0huj" path="res://assets/double_icon.png" id="11_odvk2"]
 
@@ -46,23 +46,16 @@ texture = ExtResource("4_7mglm")
 [node name="top" parent="." instance=ExtResource("6_wdaoj")]
 script = ExtResource("7_t2tqj")
 
-[node name="NinePatchRect" parent="top" index="0"]
-texture = ExtResource("8_1eiqg")
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
-
 [node name="bottom_panel" parent="." instance=ExtResource("8_m3sfp")]
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = 810.0
-offset_right = 540.0
 offset_bottom = 918.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = ExtResource("9_7igmk")
 
 [node name="MarginContainer" type="MarginContainer" parent="bottom_panel"]
 layout_mode = 0
@@ -95,6 +88,7 @@ stretch_mode = 4
 [connection signal="update_balls_available" from="." to="top" method="_on_game_update_balls_available"]
 [connection signal="update_level" from="." to="top" method="_on_game_update_level"]
 [connection signal="pressed" from="top/NinePatchRect/MarginContainer3/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="top/NinePatchRect/MarginContainer4/MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="bottom_panel/MarginContainer/HBoxContainer/bounce_button" to="." method="_on_bounce_button_pressed"]
 [connection signal="pressed" from="bottom_panel/MarginContainer/HBoxContainer/double_button" to="." method="_on_double_button_pressed"]
 

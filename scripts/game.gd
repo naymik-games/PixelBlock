@@ -26,6 +26,7 @@ var v_beam = preload("res://scenes/v_beam.tscn")
 var h_beam = preload("res://scenes/h_beam.tscn")
 var funnel = preload("res://scenes/funnel.tscn")
 
+var game_speed: int = 1
 var brick_location = Vector2(27,189)
 var cannon_location = Vector2(270,798) #864 - 8
 var end_location = Vector2()
@@ -174,7 +175,8 @@ func remove_ball(landing_position):
 
 func end_round():
 	if Engine.time_scale != 1:
-		Engine.time_scale = 1
+		game_speed = 1
+		Engine.time_scale = game_speed
 	#reset ball variables
 	game_ball_color = "ffffff" 
 	current_ball_power = 1
@@ -317,7 +319,8 @@ func game_end():
 	get_tree().reload_current_scene()
 
 func _on_texture_button_pressed():
-	Engine.time_scale = 2
+	game_speed = 2
+	Engine.time_scale = game_speed
 
 
 func _on_bounce_button_pressed(): 
@@ -332,3 +335,7 @@ func _on_double_button_pressed():
 		current_ball_power = 2
 		game_ball_color = "ff0000"
 		Globals.double_active = true
+
+
+func _on_menu_button_pressed() -> void:
+	print("pause game")
